@@ -203,7 +203,8 @@
   .pill{font-size:.78rem;letter-spacing:.1em;color:var(--gold-light);border:1px solid var(--hair);padding:9px 18px;border-radius:40px}
 
   /* ---------- services ---------- */
-  .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+  .cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+  .cards .card:last-child{grid-column:1/-1;width:calc((100% - 24px)/2);justify-self:center}
   .card{
     position:relative;border:1px solid var(--hair);background:linear-gradient(160deg,rgba(28,20,13,.55),rgba(11,10,8,.4));
     padding:40px 38px;border-radius:2px;transition:transform .55s var(--ease),border-color .55s,box-shadow .55s;overflow:hidden;
@@ -246,19 +247,6 @@
   .offer li{color:var(--muted);font-size:.95rem;padding-left:20px;position:relative}
   .offer li::before{content:"";position:absolute;left:0;top:.7em;width:7px;height:7px;border:1px solid var(--gold);transform:rotate(45deg)}
   .special .closing{margin-top:36px;font-family:var(--serif-tc);font-size:1.2rem;color:var(--cream);letter-spacing:.1em}
-
-  /* ---------- AIO screen (sec7) ---------- */
-  .aio-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
-  .price-card{border:1px solid var(--gold-deep);border-radius:3px;padding:46px 44px;background:linear-gradient(160deg,rgba(28,20,13,.7),rgba(11,10,8,.55));text-align:center}
-  .price-card .plan{font-size:.74rem;letter-spacing:.34em;text-transform:uppercase;color:var(--muted)}
-  .price-card .amt{font-family:var(--serif);font-size:clamp(2.4rem,7vw,3.4rem);letter-spacing:.04em;margin:14px 0 6px}
-  .price-card .term{color:var(--muted);font-size:.9rem;letter-spacing:.12em}
-  .price-card .bonus{margin-top:24px;border-top:1px solid var(--hair);padding-top:20px;color:var(--gold-light);font-size:.95rem;letter-spacing:.06em}
-  .aio-list{display:grid;gap:16px}
-  .aio-list .row{display:flex;gap:14px;align-items:flex-start;color:var(--muted);font-size:.97rem}
-  .aio-list .row svg{width:18px;height:18px;flex:none;stroke:var(--gold);fill:none;stroke-width:1.4;margin-top:5px}
-  .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
-  .chips span{font-size:.74rem;letter-spacing:.12em;color:var(--gold-light);border:1px solid var(--hair);padding:7px 14px;border-radius:40px}
 
   /* ---------- google maps (sec8) ---------- */
   .maps-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:56px;align-items:center}
@@ -306,7 +294,7 @@
   /* ---------- responsive ---------- */
   @media(max-width:880px){
     .nav-links{
-      position:fixed;inset:0 0 0 auto;width:78%;max-width:340px;flex-direction:column;justify-content:center;gap:30px;
+      position:fixed;inset:0 0 auto auto;width:78%;max-width:340px;height:100svh;flex-direction:column;justify-content:center;gap:30px;
       background:rgba(11,10,8,.97);backdrop-filter:blur(16px);transform:translateX(100%);transition:transform .55s var(--ease);
       border-left:1px solid var(--hair);padding:40px;
     }
@@ -323,7 +311,8 @@
     .hero .ctas{margin-top:34px}
     .scroll-hint{display:none}
     section{padding:90px 0}
-    .space-grid,.cards,.bd-grid,.studio-grid,.aio-grid,.maps-grid,.two-col{grid-template-columns:1fr}
+    .space-grid,.cards,.bd-grid,.studio-grid,.maps-grid,.two-col{grid-template-columns:1fr}
+    .cards .card:last-child{width:100%}
     .space-grid .ph.tall{min-height:300px}
     .special{padding:44px 28px}
     .feat-row .item{flex-direction:column;gap:4px}
@@ -357,7 +346,6 @@
     <a href="#space">精品空間</a>
     <a href="#services">品牌服務</a>
     <a href="#studio">直播空間</a>
-    <a href="#aio">智能螢幕</a>
     <a href="#contact">聯絡</a>
     <a href="https://line.me/ti/p/~Lionking5203344" target="_blank" rel="noopener" class="nav-cta">LINE 洽詢</a>
   </div>
@@ -430,7 +418,7 @@
     <div class="sec-head reveal">
       <span class="eyebrow">Services</span>
       <h2>品牌服務</h2>
-      <span class="sub">四大核心，讓品牌被看見、被搜尋、被信任</span>
+      <span class="sub">七大服務，讓品牌被看見、被搜尋、被信任</span>
     </div>
     <div class="cards">
       <article class="card reveal d1">
@@ -453,6 +441,21 @@
         <span class="idx">04</span>
         <h3>社群聲量操作</h3>
         <p class="desc">FB / IG 聲量、TikTok 短影音、高級品牌包裝、社群流量轉換、AI 內容策略。</p>
+      </article>
+      <article class="card reveal d1">
+        <span class="idx">05</span>
+        <h3>品牌／通路市場開發</h3>
+        <p class="desc">協助品牌拓展市場、接觸潛在合作通路，規劃市場開發方向，探索通路拓展與商業合作機會。</p>
+      </article>
+      <article class="card reveal d2">
+        <span class="idx">06</span>
+        <h3>廣告引流服務</h3>
+        <p class="desc">整合社群內容、廣告投放與品牌曝光規劃，協助商家接觸潛在客群，建立連結商業需求的流量導入入口。</p>
+      </article>
+      <article class="card reveal d3">
+        <span class="idx">07</span>
+        <h3>呆灣報報</h3>
+        <p class="desc">聚焦在地商家、美食、玩樂與特色店家推薦報導，透過生活資訊與店家故事，提供貼近在地的內容推廣服務。</p>
       </article>
     </div>
   </div>
@@ -545,38 +548,6 @@
         </div>
       </div>
       <p class="closing">打造「精品品牌 × 社群聲量」聯名經營模式。</p>
-    </div>
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- SEC 7 — AIO SCREEN -->
-<section id="aio">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow">AIO Screen Project</span>
-      <h2>AI 智能廣告螢幕方案</h2>
-      <span class="sub">店面曝光 × Google 地圖導流，自動輪播你的品牌</span>
-    </div>
-    <div class="aio-grid">
-      <div class="price-card reveal d1">
-        <div class="plan">Monthly Plan</div>
-        <div class="amt gold-text">NT$3,000 – 12,000</div>
-        <div class="term">/ 月　24 個月專案</div>
-        <div class="bonus">專案加碼　詳情內洽</div>
-      </div>
-      <div class="reveal d2">
-        <div class="aio-list">
-          <div class="row"><svg viewBox="0 0 24 24"><path d="M5 12 L10 17 L19 7"/></svg><span>AIO 智能螢幕，AI 廣告輪播</span></div>
-          <div class="row"><svg viewBox="0 0 24 24"><path d="M5 12 L10 17 L19 7"/></svg><span>品牌展示、店面曝光</span></div>
-          <div class="row"><svg viewBox="0 0 24 24"><path d="M5 12 L10 17 L19 7"/></svg><span>Google 地圖導流，提升在地能見度</span></div>
-        </div>
-        <p class="body" style="margin-top:24px">可投放通路</p>
-        <div class="chips">
-          <span>Facebook</span><span>Instagram</span><span>Google 地圖</span><span>AI 搜尋曝光</span>
-        </div>
-      </div>
     </div>
   </div>
 </section>
